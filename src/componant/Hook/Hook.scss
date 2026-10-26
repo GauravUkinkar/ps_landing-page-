@@ -1,0 +1,225 @@
+.hook-parent {
+  width: 100%;
+  padding:100px 10px;
+
+  .hook-cont {
+    position: relative;
+    min-height: 300px;
+    padding: 35px 38px;
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 35, 77, 0.98) 0%,
+        rgba(8, 76, 151, 0.94) 45%,
+        rgba(8, 102, 235, 0.42) 100%
+      ),
+      url("../../assets/hook.jpg");
+
+    background-position:
+      center,
+      right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    box-shadow: 0 8px 25px rgba(5, 46, 84, 0.08);
+
+    /* CONTENT */
+
+    .hook-content {
+      position: relative;
+      z-index: 1;
+      width: 75%;
+      max-width: 750px;
+    }
+
+    .hook-subtitle {
+      display: inline-block;
+      margin-bottom: 10px;
+
+      color: #dceaff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+      font-size: clamp(27px, 3vw, 36px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.7px;
+    }
+
+    p {
+      max-width: 620px;
+      margin: 0 0 19px;
+
+      color: #e5edfa;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* BUTTONS */
+
+    .hook-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hook-btn {
+      min-height: 44px;
+      padding: 12px 20px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      border-radius: 7px;
+
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      svg {
+        font-size: 13px;
+      }
+    }
+
+    .hook-btn-primary {
+      color: #102342;
+      background: #ffffff;
+      border: 1px solid #ffffff;
+
+      &:hover {
+        color: #ffffff;
+        background: linear-gradient(
+          135deg,
+          #0866eb 0%,
+          #0645ad 55%,
+          #052e54 100%
+        );
+        border-color: #ffffff;
+      }
+    }
+
+    .hook-btn-secondary {
+      color: #ffffff;
+      background: rgba(5, 35, 77, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
+      &:hover {
+        color: #102342;
+        background: #ffffff;
+      }
+    }
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .hook-parent {
+    padding: 30px 20px;
+
+    .hook-cont {
+      min-height: 230px;
+      padding: 30px;
+
+      background-position:
+        center,
+        65% center;
+
+      .hook-content {
+        width: 85%;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .hook-parent {
+    padding: 25px 16px;
+
+    .hook-cont {
+      min-height: auto;
+      padding: 30px 22px;
+
+      background:
+        linear-gradient(
+          110deg,
+          rgba(5, 35, 77, 0.97) 0%,
+          rgba(8, 76, 151, 0.9) 100%
+        ),
+        url("../../assets/hook.jpg");
+
+      background-position: center;
+      background-size: cover;
+
+      .hook-content {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hook-subtitle {
+        font-size: 10px;
+        letter-spacing: 1.4px;
+      }
+
+      h2 {
+        font-size: 27px;
+        line-height: 1.35;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 1.75;
+      }
+
+      .hook-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hook-btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 15px;
+        font-size: 12px;
+      }
+    }
+  }
+}

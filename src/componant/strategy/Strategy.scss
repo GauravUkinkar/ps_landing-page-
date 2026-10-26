@@ -1,0 +1,265 @@
+.strategy-parent {
+  padding: 100px 10px;
+  background: linear-gradient(115deg, #f1f6ff 0%, #ffffff 48%, #e7f0ff 100%);
+  box-shadow: var(--shadow);
+  .strategy-cont {
+    padding: 0 35px;
+  }
+
+  /* SECTION HEADING */
+
+  .strategy-heading {
+    max-width: 950px;
+    margin: 0 auto 38px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      margin-bottom: 7px;
+      background: linear-gradient(135deg, #0866eb 0%, #0047b3 100%);
+      padding: 5px 10px;
+      border-radius: 50px;
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+
+      color: #101f3d;
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 0 auto;
+
+      color: #526078;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+  }
+
+  /* FLEXBOX FEATURE LIST */
+
+  .strategy-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* INDIVIDUAL FEATURE */
+
+  .strategy-item {
+    position: relative;
+
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-width: 0;
+    padding: 12px 22px 10px;
+
+    text-align: center;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 45px;
+      right: 0;
+
+      width: 1px;
+      height: 90px;
+
+      background: #e9edf5;
+    }
+
+    /* ICON */
+
+    .strategy-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 65px;
+      height: 65px;
+      margin-bottom: 12px;
+
+      color: #0866eb;
+
+      svg {
+        font-size: 46px;
+        stroke-width: 1;
+        transition:
+          transform 0.3s ease,
+          color 0.3s ease;
+      }
+    }
+
+    /* TITLE */
+
+    h3 {
+      margin: 0 0 10px;
+
+      color: #101f3d;
+      font-size: 17px;
+      font-weight: 750;
+      line-height: 1.4;
+      letter-spacing: -0.2px;
+    }
+
+    /* DESCRIPTION */
+
+    p {
+      max-width: 240px;
+      margin: 0;
+
+      color: #526078;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    &:hover {
+      .strategy-icon svg {
+        color: #034fbf;
+        transform: translateY(-4px);
+      }
+    }
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .strategy-parent {
+    padding: 45px 0 50px;
+
+    .strategy-cont {
+      padding: 0 25px;
+    }
+
+    .strategy-heading {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .strategy-list {
+      row-gap: 30px;
+    }
+
+    .strategy-item {
+      flex: 1 1 50%;
+      padding: 10px 20px;
+
+      &:nth-child(2)::after {
+        display: none;
+      }
+
+      &:nth-child(3)::after {
+        display: block;
+      }
+
+      .strategy-icon {
+        width: 58px;
+        height: 58px;
+
+        svg {
+          font-size: 41px;
+        }
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+  .strategy-parent {
+    padding: 40px 0;
+
+    .strategy-cont {
+      padding: 0 20px;
+    }
+
+    .strategy-heading {
+      margin-bottom: 28px;
+
+      span {
+        font-size: 10px;
+      }
+
+      h2 {
+        font-size: 27px;
+        line-height: 1.35;
+        letter-spacing: -0.5px;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+    }
+
+    .strategy-list {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 25px;
+    }
+
+    .strategy-item {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: 10px 12px 18px;
+
+      &:not(:last-child)::after,
+      &:nth-child(3)::after {
+        display: none;
+      }
+
+      .strategy-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 10px;
+
+        svg {
+          font-size: 40px;
+        }
+      }
+
+      h3 {
+        margin-bottom: 7px;
+        font-size: 17px;
+      }
+
+      p {
+        max-width: 290px;
+        font-size: 13px;
+      }
+    }
+  }
+}
