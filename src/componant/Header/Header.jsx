@@ -7,7 +7,7 @@ const Header = () => {
     const menuItems = [
         { name: "Home", to: "home" },
         { name: "Services", to: "services" },
-        { name: "About", to: "about" },
+        // { name: "Testimonial", to: "testimonial" },
         { name: "Our Work", to: "work" },
         { name: "Contact", to: "contact" },
     ];
