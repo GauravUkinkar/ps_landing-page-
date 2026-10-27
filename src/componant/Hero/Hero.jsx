@@ -74,16 +74,7 @@ const Hero = () => {
             />
           </div>
 
-          {/* FLOATING LABEL */}
-          <div className="hero-floating-note">
-            <span className="note-line"></span>
 
-            <div className="note-content">
-              <span>Modern</span>
-              <span>Creative</span>
-              <span>Reliable</span>
-            </div>
-          </div>
 
           {/* DECORATIVE ICON */}
           <div className="hero-floating-icon floating-icon-one">

@@ -6,6 +6,7 @@ import Process from '../componant/Process/Process'
 import Testimonial from '../componant/testimonial/Testimonial'
 import Hook from '../componant/Hook/Hook'
 import Casestudy from '../componant/CaseStudy/Casestudy'
+import Contact from '../componant/contact/Contact'
 
 const Home = () => {
   return (
@@ -15,7 +16,8 @@ const Home = () => {
       <Services />
       <Strategy />
       <Casestudy />
-      <Process />
+      <Contact />
+      {/* <Process /> */}
       <Testimonial />
       
     </>

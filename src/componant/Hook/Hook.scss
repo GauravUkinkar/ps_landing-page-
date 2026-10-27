@@ -39,20 +39,16 @@
     display: flex;
     align-items: center;
     gap: 16px;
-
     background: #ffffff;
     border: 1px solid #e9f0fb;
-    border-radius: 12px;
-
+    border-radius: 10px;
     box-shadow: 0 5px 18px rgba(36, 91, 153, 0.06);
-
     transition:
       transform 0.25s ease,
       box-shadow 0.25s ease;
 
     &:hover {
       transform: translateY(-3px);
-
       box-shadow: 0 10px 25px rgba(36, 91, 153, 0.1);
     }
   }
@@ -74,14 +70,13 @@
     color: #087cf0;
 
     svg {
-      font-size: 33px;
+      font-size: 34px;
     }
   }
 
   // Percentage and description
 
   .hook-stat-content {
-    min-width: 0;
 
     h3 {
       margin: 0 0 2px;
@@ -97,7 +92,7 @@
       margin: 0;
 
       color: #34445f;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 500;
       line-height: 1.5;
     }
@@ -122,7 +117,7 @@
       margin: 0;
 
       color: #586780;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 400;
       line-height: 1.6;
     }

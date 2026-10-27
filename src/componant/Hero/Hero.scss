@@ -10,12 +10,7 @@
       rgba(0, 113, 255, 0.2) 0%,
       transparent 38%
     ),
-    linear-gradient(
-      115deg,
-      #031329 0%,
-      #041b39 48%,
-      #03142b 100%
-    );
+    linear-gradient(115deg, #031329 0%, #041b39 48%, #03142b 100%);
   color: #ffffff;
 
   // Background grid
@@ -27,23 +22,12 @@
     pointer-events: none;
 
     background-image:
-      linear-gradient(
-        rgba(65, 149, 255, 0.045) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        rgba(65, 149, 255, 0.045) 1px,
-        transparent 1px
-      );
+      linear-gradient(rgba(65, 149, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(65, 149, 255, 0.045) 1px, transparent 1px);
 
     background-size: 45px 45px;
 
-    mask-image: linear-gradient(
-      to right,
-      black,
-      transparent 80%
-    );
+    mask-image: linear-gradient(to right, black, transparent 80%);
   }
 
   .hero-background-glow {
@@ -79,10 +63,6 @@
     align-items: center;
     gap: 25px;
   }
-
-  // ==========================================
-  // LEFT CONTENT
-  // ==========================================
 
   .hero-content {
     position: relative;
@@ -137,11 +117,7 @@
     span {
       color: #13b7ff;
 
-      background: linear-gradient(
-        100deg,
-        #19c4ff 0%,
-        #078cff 100%
-      );
+      background: linear-gradient(100deg, #19c4ff 0%, #078cff 100%);
 
       background-clip: text;
       -webkit-background-clip: text;
@@ -171,10 +147,6 @@
     line-height: 1.8;
   }
 
-  // ==========================================
-  // CTA BUTTON
-  // ==========================================
-
   .hero-buttons {
     display: flex;
     align-items: center;
@@ -184,77 +156,39 @@
   }
 
   .hero-btn {
-    min-height: 51px;
-    padding: 0 21px;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 7px;
+    background: #0866e8;
+    text-decoration: none;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
 
-    border-radius: 50px;
-
-    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
     white-space: nowrap;
-
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
-
+    box-shadow: 0 3px 8px rgba(8, 102, 232, 0.15);
     transition:
-      transform 0.25s ease,
       background 0.25s ease,
-      box-shadow 0.25s ease;
+      transform 0.25s ease;
 
     svg {
-      flex-shrink: 0;
       font-size: 13px;
-    }
-
-    .button-arrow {
-      margin-left: 3px;
       transition: transform 0.25s ease;
     }
 
     &:hover {
-      transform: translateY(-3px);
+      background: #054fb8;
+      transform: translateY(-1px);
 
-      .button-arrow {
-        transform: translateX(4px);
+      svg {
+        transform: translateX(3px);
       }
     }
   }
-
-  .primary-btn {
-    color: #ffffff;
-
-    background: linear-gradient(
-      100deg,
-      #0788ff 0%,
-      #08b6f5 100%
-    );
-
-    border: 1px solid rgba(75, 192, 255, 0.65);
-
-    box-shadow:
-      0 8px 25px rgba(0, 119, 255, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
-    &:hover {
-      background: linear-gradient(
-        100deg,
-        #0073ed 0%,
-        #009de7 100%
-      );
-
-      box-shadow:
-        0 12px 32px rgba(0, 119, 255, 0.4);
-    }
-  }
-
-  // ==========================================
-  // TRUST INDICATORS
-  // ==========================================
 
   .hero-trust {
     display: flex;
@@ -315,8 +249,6 @@
     }
 
     p {
-      margin: 0;
-
       color: #c3d1e3;
 
       font-size: 11px;
@@ -336,11 +268,9 @@
   .hero-visual {
     position: relative;
     align-self: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     min-width: 0;
     min-height: 440px;
@@ -349,96 +279,29 @@
   .hero-image-glow {
     position: absolute;
     z-index: -1;
-
     top: 12%;
     left: 10%;
-
     width: 80%;
     height: 75%;
-
     border-radius: 50%;
-
     background: rgba(0, 115, 255, 0.22);
     filter: blur(75px);
-
     pointer-events: none;
   }
 
   .hero-image {
     position: relative;
-
-    width: 115%;
-    max-width: 760px;
-
-    margin-left: -5%;
-
+    border-radius: 10px;
+    width: 100%;
     animation: heroImageFloat 6s ease-in-out infinite;
 
     img {
       display: block;
-
       width: 100%;
       height: auto;
-
+      border-radius: 10px;
       object-fit: contain;
-
-      // Remove these properties if your image
-      // already has its own transparent edges.
-      filter: drop-shadow(
-        0 20px 35px rgba(0, 0, 0, 0.25)
-      );
-    }
-  }
-
-  // ==========================================
-  // FLOATING DECORATIVE ELEMENTS
-  // ==========================================
-
-  .hero-floating-note {
-    position: absolute;
-    top: 3%;
-    right: 1%;
-
-    display: flex;
-    align-items: center;
-    gap: 9px;
-
-    transform: rotate(-7deg);
-
-    .note-line {
-      position: relative;
-
-      width: 27px;
-      height: 1px;
-
-      background: #8ebaff;
-
-      &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: -3px;
-
-        width: 7px;
-        height: 7px;
-
-        border-top: 1px solid #8ebaff;
-        border-right: 1px solid #8ebaff;
-
-        transform: rotate(45deg);
-      }
-    }
-
-    .note-content {
-      display: flex;
-      flex-direction: column;
-
-      color: #d8e8ff;
-
-      font-family: cursive;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.35;
+      filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.25));
     }
   }
 
@@ -510,10 +373,6 @@
   }
 }
 
-// ==========================================
-// ANIMATIONS
-// ==========================================
-
 @keyframes heroImageFloat {
   0%,
   100% {
@@ -571,14 +430,6 @@
       width: 120%;
       max-width: 650px;
     }
-
-    .hero-floating-note {
-      right: -1%;
-
-      .note-content {
-        font-size: 12px;
-      }
-    }
   }
 }
 
@@ -589,15 +440,21 @@
 @media (max-width: 900px) {
   .hero-parent {
     .hero-cont {
-      width: calc(100% - 48px);
-      min-height: auto;
-      padding: 65px 0 75px;
+      padding: 80px 10px;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .hero-content {
-      max-width: 650px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
@@ -624,11 +481,6 @@
       width: 100%;
       max-width: 650px;
       margin-left: 0;
-    }
-
-    .hero-floating-note {
-      top: 2%;
-      right: 5%;
     }
 
     .floating-icon-one {
@@ -731,20 +583,6 @@
       margin-left: -6%;
     }
 
-    .hero-floating-note {
-      top: 0;
-      right: 0;
-      gap: 5px;
-
-      .note-line {
-        width: 15px;
-      }
-
-      .note-content {
-        font-size: 10px;
-      }
-    }
-
     .hero-floating-icon {
       width: 32px;
       height: 32px;
@@ -802,12 +640,6 @@
 
     .hero-btn {
       font-size: 11px;
-    }
-
-    .hero-floating-note {
-      .note-content {
-        font-size: 9px;
-      }
     }
   }
 }

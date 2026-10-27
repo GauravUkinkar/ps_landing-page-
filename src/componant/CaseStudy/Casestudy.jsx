@@ -119,20 +119,7 @@ const Casestudy = () => {
   return (
     <section className="case-study-parent parent" id="work">
       <div className="case-study-cont container">
-        {/* DECORATIVE BACKGROUND */}
-        <div className="case-study-wave" aria-hidden="true">
-          <svg
-            viewBox="0 0 1440 250"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,190 C170,20 280,250 490,150 S720,25 900,105 S1200,225 1440,15"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-          </svg>
-        </div>
+
 
         {/* HEADING */}
         <header className="case-study-heading">
@@ -141,9 +128,8 @@ const Casestudy = () => {
           </span>
 
           <h2>
-            Results
-            <br />
-            <span>Speak Louder</span>
+          Real businesses. Real results.
+
           </h2>
 
           <p>
@@ -152,20 +138,7 @@ const Casestudy = () => {
           </p>
         </header>
 
-        {/* STATISTICS */}
-        <div className="case-study-stats">
-          {stats.map((stat) => (
-            <div className="case-stat" key={stat.id}>
-              <div className={`case-stat-icon ${stat.color}`}>
-                {stat.icon}
-              </div>
 
-              <h3>{stat.number}</h3>
-
-              <p>{stat.label}</p>
-            </div>
-          ))}
-        </div>
 
         {/* CASE STUDY CAROUSEL */}
         <div className="case-study-carousel-wrap">
