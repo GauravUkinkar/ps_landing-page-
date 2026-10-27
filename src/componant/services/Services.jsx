@@ -1,126 +1,125 @@
 import React from "react";
 import {
+  FaCode,
   FaBullhorn,
   FaChartColumn,
-  FaHeart,
-  FaCalendarCheck,
-  FaBuilding,
-  FaSeedling,
+  FaPalette,
   FaArrowRight,
+  FaCalendarCheck,
 } from "react-icons/fa6";
 
 import "./Services.scss";
-import img1 from "../../assets/pr_and_marketing.jpg"
+
+import img1 from "../../assets/pr_and_marketing.jpg";
 import img2 from "../../assets/business.jpg";
-import img3 from "../../assets/medical.jpg"
-import img4 from "../../assets/healtcareevent.jpg"
-import img5 from "../../assets/real_estate.jpg";
-import img6 from "../../assets/venture.jpg"
+import img3 from "../../assets/medical.jpg";
+import img4 from "../../assets/healtcareevent.jpg";
+
 const Services = () => {
   const servicesData = [
     {
       id: 1,
-      title: "PR, Branding & Marketing",
+      title: "Web Development",
       description:
-        "Build brand awareness, strengthen your reputation, and connect with the right audience.",
+        "Websites, e-commerce stores and CRM systems that convert visitors into customers.",
+      icon: <FaCode />,
       image: img1,
-      icon: <FaBullhorn />,
-      link: "#contact",
+      theme: "blue",
     },
     {
       id: 2,
-      title: "Business Consultancy",
+      title: "PR & Branding",
       description:
-        "Strategic guidance for business setup, market research, and sustainable growth.",
+        "Logos, brand guidelines and press coverage people remember.",
+      icon: <FaBullhorn />,
       image: img2,
-      icon: <FaChartColumn />,
-      link: "#contact",
+      theme: "purple",
     },
     {
       id: 3,
-      title: "Medical & Wellness Tourism",
+      title: "Digital Marketing",
       description:
-        "Explore healthcare and wellness opportunities with tailored consultation and coordination.",
+        "Social media, SEO, GEO and SMO that put you in front of the right people.",
+      icon: <FaChartColumn />,
       image: img3,
-      icon: <FaHeart />,
-      link: "#contact",
+      theme: "green",
     },
     {
       id: 4,
-      title: "Corporate & Healthcare Events",
+      title: "Content & Design",
       description:
-        "Plan and coordinate impactful events that bring industry experts together.",
+        "Presentations, company profiles, publications and merch that look as good as your work.",
+      icon: <FaPalette />,
       image: img4,
-      icon: <FaCalendarCheck />,
-      link: "#contact",
-    },
-    {
-      id: 5,
-      title: "Real Estate Consultancy",
-      description:
-        "Identify and explore real estate opportunities with a strategic approach.",
-      image: img5,
-      icon: <FaBuilding />,
-      link: "#contact",
-    },
-    {
-      id: 6,
-      title: "Venture Capital",
-      description:
-        "Support promising startups and growing businesses with investment opportunities and strategic partnerships.",
-      image: img6,
-      icon: <FaSeedling />,
-      link: "#contact",
+      theme: "orange",
     },
   ];
 
   return (
     <section className="services-parent parent" id="services">
       <div className="services-cont container">
-        {/* Section Heading */}
+        {/* SECTION HEADING */}
         <div className="services-heading">
-          <span>WHAT WE DO</span>
-          <h2>Our Services</h2>
-          <p>
-            Comprehensive solutions to help your business grow.
-          </p>
+          <span className="services-eyebrow">WHAT WE DO</span>
+
+          <h2>
+            Everything your brand needs
+            <br />
+            to be <span>seen, trusted and chosen.</span>
+          </h2>
         </div>
 
-        {/* Services Cards */}
+       
+
+        {/* SERVICE CARDS */}
         <div className="services-list">
           {servicesData.map((service) => (
-            <article className="service-card" key={service.id}>
-              {/* Image */}
-              <div className="service-image">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  loading="lazy"
-                />
-              </div>
+            <article
+              className={`service-card ${service.theme}`}
+              key={service.id}
+            >
+              <div className="service-card-background"></div>
 
-              {/* Icon */}
               <div className="service-icon">
                 {service.icon}
               </div>
 
-              {/* Content */}
               <div className="service-content">
                 <h3>{service.title}</h3>
 
                 <p>{service.description}</p>
 
                 <a
-                  href={service.link}
+                  href="#contact"
                   className="service-link"
                   aria-label={`Learn more about ${service.title}`}
                 >
-                  Learn More
                   <FaArrowRight />
                 </a>
               </div>
+
+              <div className="service-image">
+                <img
+                  src={service.image}
+                  alt={`${service.title} service`}
+                  loading="lazy"
+                />
+              </div>
             </article>
           ))}
+        </div>
+
+        {/* BOTTOM CONTENT */}
+        <div className="services-bottom">
+          <h3>
+            We don't just deliver services. We guide you to the smartest way to grow.
+          </h3>
+
+          <a href="#contact" className="services-cta">
+            <FaCalendarCheck />
+            <span>Book Your Free Strategy Call</span>
+            <FaArrowRight className="cta-arrow" />
+          </a>
         </div>
       </div>
     </section>

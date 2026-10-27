@@ -1,265 +1,386 @@
 .strategy-parent {
-  padding: 100px 10px;
-  background: linear-gradient(115deg, #f1f6ff 0%, #ffffff 48%, #e7f0ff 100%);
-  box-shadow: var(--shadow);
+  background:
+    radial-gradient(circle at 48% 0%, rgba(12, 70, 133, 0.24), transparent 55%),
+    linear-gradient(110deg, #03162e 0%, #00132b 55%, #021b38 100%);
+
+  color: #ffffff;
+
   .strategy-cont {
-    padding: 0 35px;
-  }
-
-  /* SECTION HEADING */
-
-  .strategy-heading {
-    max-width: 950px;
-    margin: 0 auto 38px;
-    text-align: center;
-
-    span {
-      display: inline-block;
-      margin-bottom: 7px;
-      background: linear-gradient(135deg, #0866eb 0%, #0047b3 100%);
-      padding: 5px 10px;
-      border-radius: 50px;
-      color: white;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 2px;
-    }
-
-    h2 {
-      margin: 0 0 12px;
-
-      color: #101f3d;
-      font-size: clamp(28px, 3vw, 38px);
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -0.8px;
-    }
-
-    p {
-      max-width: 900px;
-      margin: 0 auto;
-
-      color: #526078;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 1.8;
-    }
-  }
-
-  /* FLEXBOX FEATURE LIST */
-
-  .strategy-list {
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
-    width: 100%;
-  }
-
-  /* INDIVIDUAL FEATURE */
-
-  .strategy-item {
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 10px;
     position: relative;
 
-    display: flex;
-    flex: 1 1 25%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    min-width: 0;
-    padding: 12px 22px 10px;
-
-    text-align: center;
-
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 45px;
-      right: 0;
-
-      width: 1px;
-      height: 90px;
-
-      background: #e9edf5;
-    }
-
-    /* ICON */
-
-    .strategy-icon {
+    .strategy-heading {
       display: flex;
+      flex-direction: column;
+      gap: 20px;
       align-items: center;
       justify-content: center;
 
-      width: 65px;
-      height: 65px;
-      margin-bottom: 12px;
+      > span {
+        display: inline-block;
+        padding: 8px 13px;
 
-      color: #0866eb;
+        border: 1px solid rgba(79, 165, 255, 0.18);
+        border-radius: 50px;
 
-      svg {
-        font-size: 46px;
-        stroke-width: 1;
-        transition:
-          transform 0.3s ease,
-          color 0.3s ease;
+        background: rgba(29, 99, 164, 0.24);
+
+        color: #d5eaff;
+
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.1px;
+        line-height: 1.4;
+
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 2px;
       }
-    }
-
-    /* TITLE */
-
-    h3 {
-      margin: 0 0 10px;
-
-      color: #101f3d;
-      font-size: 17px;
-      font-weight: 750;
-      line-height: 1.4;
-      letter-spacing: -0.2px;
-    }
-
-    /* DESCRIPTION */
-
-    p {
-      max-width: 240px;
-      margin: 0;
-
-      color: #526078;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    &:hover {
-      .strategy-icon svg {
-        color: #034fbf;
-        transform: translateY(-4px);
-      }
-    }
-  }
-}
-
-/* TABLET */
-
-@media (max-width: 900px) {
-  .strategy-parent {
-    padding: 45px 0 50px;
-
-    .strategy-cont {
-      padding: 0 25px;
-    }
-
-    .strategy-heading {
-      margin-bottom: 30px;
 
       h2 {
-        font-size: 30px;
-      }
+        color: #ffffff;
+        font-size: clamp(25px, 3vw, 36px);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.8px;
 
-      p {
-        font-size: 14px;
+        span {
+          color: #08b9ff;
+        }
       }
     }
+
+    // FIVE-STEP PROCESS
 
     .strategy-list {
-      row-gap: 30px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      width: 100%;
+      gap: 0;
     }
 
+    // INDIVIDUAL STEP
+
     .strategy-item {
-      flex: 1 1 50%;
-      padding: 10px 20px;
+      position: relative;
 
-      &:nth-child(2)::after {
-        display: none;
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 0 8px 15px 0;
+
+      // ICON AND HEADING
+
+      .strategy-step-top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        min-height: 50px;
+        margin-bottom: 10px;
       }
 
-      &:nth-child(3)::after {
-        display: block;
-      }
+      // CIRCULAR ICON
 
       .strategy-icon {
-        width: 58px;
-        height: 58px;
+        position: relative;
+
+        flex: 0 0 48px;
+
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 50%;
+
+        color: #ffffff;
+
+        box-shadow:
+          0 0 16px rgba(0, 153, 255, 0.18),
+          inset 0 0 10px rgba(255, 255, 255, 0.08);
 
         svg {
-          font-size: 41px;
+          font-size: 20px;
         }
       }
 
+      // STEP NUMBER AND TITLE
+
+      .strategy-step-heading {
+        min-width: 0;
+      }
+
+      .strategy-number {
+        display: block;
+        margin-bottom: 3px;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
       h3 {
+        color: #ffffff;
         font-size: 16px;
+        font-weight: 750;
+        line-height: 1.4;
       }
 
-      p {
-        font-size: 13px;
+      // DESCRIPTION
+
+      .strategy-description {
+        max-width: 155px;
+        margin: 0 0 0 60px;
+
+        color: #c2d0e3;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.65;
+      }
+
+      // VERTICAL TIMELINE
+
+      .strategy-timeline {
+        position: absolute;
+        top: 58px;
+        left: 23px;
+
+        width: 1px;
+        height: 37px;
+
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 166, 255, 0.7),
+          rgba(0, 166, 255, 0)
+        );
+      }
+
+      // COLOR THEMES
+
+      &.blue {
+        .strategy-icon {
+          background: linear-gradient(145deg, #079eff, #0063e8);
+          box-shadow: 0 0 22px rgba(0, 130, 255, 0.28);
+        }
+
+        .strategy-timeline {
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 145, 255, 0.7),
+            transparent
+          );
+        }
+      }
+
+      &.purple {
+        .strategy-icon {
+          background: linear-gradient(145deg, #c35bff, #8438ed);
+          box-shadow: 0 0 22px rgba(172, 70, 255, 0.25);
+        }
+
+        .strategy-timeline {
+          background: linear-gradient(
+            to bottom,
+            rgba(176, 75, 255, 0.7),
+            transparent
+          );
+        }
+      }
+
+      &.teal {
+        .strategy-icon {
+          background: linear-gradient(145deg, #24d5d0, #0aacae);
+          box-shadow: 0 0 22px rgba(25, 211, 202, 0.2);
+        }
+
+        .strategy-timeline {
+          background: linear-gradient(
+            to bottom,
+            rgba(25, 211, 202, 0.7),
+            transparent
+          );
+        }
       }
     }
-  }
-}
 
-/* MOBILE */
+    // CONNECTING ARROWS
 
-@media (max-width: 550px) {
-  .strategy-parent {
-    padding: 40px 0;
+    .strategy-connector {
+      flex: 0 0 28px;
 
-    .strategy-cont {
-      padding: 0 20px;
-    }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
 
-    .strategy-heading {
-      margin-bottom: 28px;
+      margin-top: 20px;
+
+      color: #2474c9;
 
       span {
+        width: 13px;
+        height: 1px;
+
+        background: linear-gradient(90deg, rgba(30, 92, 163, 0.1), #2474c9);
+      }
+
+      svg {
         font-size: 10px;
       }
+    }
+  }
+}
+// TABLET
+
+@media (max-width: 1024px) {
+  .strategy-parent {
+    padding: 45px 0;
+
+    .strategy-cont {
+      width: calc(100% - 40px);
+    }
+
+    .strategy-heading {
+      max-width: 75%;
 
       h2 {
-        font-size: 27px;
-        line-height: 1.35;
-        letter-spacing: -0.5px;
-      }
-
-      p {
-        font-size: 13px;
-        line-height: 1.8;
+        font-size: 29px;
       }
     }
 
     .strategy-list {
-      flex-direction: column;
-      flex-wrap: nowrap;
-      gap: 25px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px 18px;
     }
 
     .strategy-item {
-      flex: 0 0 auto;
-      width: 100%;
-      padding: 10px 12px 18px;
+      padding-right: 0;
 
-      &:not(:last-child)::after,
-      &:nth-child(3)::after {
-        display: none;
+      .strategy-step-top {
+        gap: 10px;
       }
 
       .strategy-icon {
-        width: 58px;
-        height: 58px;
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+      }
+
+      .strategy-description {
+        max-width: 190px;
+        margin-left: 56px;
+        font-size: 11px;
+      }
+
+      .strategy-timeline {
+        left: 22px;
+      }
+    }
+
+    .strategy-connector {
+      display: none;
+    }
+  }
+}
+
+// MOBILE
+
+@media (max-width: 600px) {
+  .strategy-parent {
+    padding: 38px 0 40px;
+
+    .strategy-cont {
+      width: calc(100% - 36px);
+    }
+
+    .strategy-heading {
+      max-width: 100%;
+      margin-bottom: 28px;
+
+      > span {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+
+      h2 {
+        font-size: clamp(25px, 7vw, 32px);
+        line-height: 1.25;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .strategy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .strategy-item {
+      width: 100%;
+      padding: 0 0 0 0;
+
+      .strategy-step-top {
+        gap: 14px;
         margin-bottom: 10px;
+      }
+
+      .strategy-icon {
+        flex-basis: 50px;
+        width: 50px;
+        height: 50px;
 
         svg {
-          font-size: 40px;
+          font-size: 20px;
         }
       }
 
-      h3 {
-        margin-bottom: 7px;
+      .strategy-number {
         font-size: 17px;
       }
 
-      p {
-        max-width: 290px;
-        font-size: 13px;
+      h3 {
+        font-size: 14px;
+      }
+
+      .strategy-description {
+        max-width: 310px;
+        margin-left: 64px;
+
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .strategy-timeline {
+        top: 55px;
+        left: 24px;
+        height: 27px;
       }
     }
+
+    .strategy-connector {
+      display: none;
+    }
+  }
+}
+
+// ACCESSIBILITY
+
+@media (prefers-reduced-motion: reduce) {
+  .strategy-parent * {
+    scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
