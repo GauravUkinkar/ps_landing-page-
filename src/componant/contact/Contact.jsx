@@ -1,31 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaPhone,
   FaEnvelope,
   FaWhatsapp,
-  FaCalendarDays,
   FaArrowRight,
   FaMessage,
 } from "react-icons/fa6";
 
 import "./Contact.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwm0LQk9L0sp-dB3jyPHju7thUV-Wg06XmSayePeixOcY1DKKZPOUTNHAZv_O1Aj33a/exec";
 
 const Contact = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Replace this with your backend API or email service.
-    console.log("Contact Form Submission:", data);
+  if (isSubmitting) return;
 
-    alert("Thank you! Your message has been submitted.");
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.text();
+
+    if (result.trim() !== "SUCCESS") {
+      throw new Error("Google Sheets submission failed.");
+    }
+
+    toast.success(
+      "Thank you! Your message has been submitted successfully."
+    );
+
     form.reset();
-  };
+  } catch (error) {
+    console.error("Contact form submission error:", error);
+
+    toast.error(
+      "We couldn't confirm your submission. Please try again later."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
+    <>
+    
+     <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      theme="colored"
+      newestOnTop
+      closeOnClick
+      pauseOnHover
+    />
     <section className="contact-parent parent" id="contact">
       <div className="contact-cont container">
         {/* LEFT CONTENT */}
@@ -109,6 +148,7 @@ const Contact = () => {
                 placeholder="Your Name *"
                 aria-label="Your name"
                 autoComplete="name"
+                maxLength={100}
                 required
               />
             </div>
@@ -121,6 +161,7 @@ const Contact = () => {
                 placeholder="Your Email *"
                 aria-label="Your email"
                 autoComplete="email"
+                maxLength={254}
                 required
               />
             </div>
@@ -135,6 +176,7 @@ const Contact = () => {
                 autoComplete="tel"
                 pattern="[+0-9() -]{7,20}"
                 title="Please enter a valid phone number."
+                maxLength={20}
                 required
               />
             </div>
@@ -166,28 +208,6 @@ const Contact = () => {
                 <option value="Content & Design">
                   Content & Design
                 </option>
-
-                <option value="Business Consultancy">
-                  Business Consultancy
-                </option>
-
-                <option value="Medical & Wellness Tourism">
-                  Medical & Wellness Tourism
-                </option>
-
-                <option value="Corporate & Healthcare Events">
-                  Corporate & Healthcare Events
-                </option>
-
-                <option value="Real Estate Consultancy">
-                  Real Estate Consultancy
-                </option>
-
-                <option value="Venture Capital">
-                  Venture Capital
-                </option>
-
-                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -198,14 +218,22 @@ const Contact = () => {
                 placeholder="Tell us where you are and where you want to be... *"
                 aria-label="Tell us about your requirements"
                 rows="4"
+                maxLength={5000}
                 required
               />
             </div>
 
             {/* SUBMIT */}
-            <button type="submit" className="contact-submit-btn">
-              <span>Send Message</span>
-              <FaArrowRight />
+            <button
+              type="submit"
+              className="contact-submit-btn"
+              disabled={isSubmitting}
+            >
+              <span>
+                {isSubmitting ? "Submitting..." : "Send Message"}
+              </span>
+
+              {!isSubmitting && <FaArrowRight />}
             </button>
 
             <p className="contact-form-note">
@@ -216,6 +244,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
