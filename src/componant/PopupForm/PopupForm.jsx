@@ -17,6 +17,9 @@ import "./PopupForm.scss";
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwm0LQk9L0sp-dB3jyPHju7thUV-Wg06XmSayePeixOcY1DKKZPOUTNHAZv_O1Aj33a/exec";
 
+const THANK_YOU_URL =
+  "https://marketing.pandozasolutions.com/thank-you-footerform";
+
 const PopupForm = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,12 +70,8 @@ const PopupForm = () => {
         throw new Error("Google Sheets submission failed.");
       }
 
-      toast.success(
-        "Thank you! Your consultation request has been submitted successfully."
-      );
-
-      form.reset();
-      setIsOpen(false);
+      // Redirect only after successful submission.
+      window.location.href = THANK_YOU_URL;
     } catch (error) {
       console.error("Popup form submission error:", error);
 
@@ -86,7 +85,6 @@ const PopupForm = () => {
 
   return (
     <>
-      {/* Toast Notifications */}
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -96,7 +94,6 @@ const PopupForm = () => {
         pauseOnHover
       />
 
-      {/* Popup */}
       {isOpen && (
         <div
           className="consultation-popup-overlay"
@@ -108,7 +105,6 @@ const PopupForm = () => {
             aria-modal="true"
             aria-labelledby="popup-title"
           >
-            {/* Close Button */}
             <button
               type="button"
               className="popup-close"
@@ -153,7 +149,6 @@ const PopupForm = () => {
 
               <form onSubmit={handleSubmit}>
                 <div className="popup-form-grid">
-                  {/* NAME */}
                   <div className="popup-field">
                     <FaUser />
 
@@ -168,7 +163,6 @@ const PopupForm = () => {
                     />
                   </div>
 
-                  {/* EMAIL */}
                   <div className="popup-field">
                     <FaEnvelope />
 
@@ -183,7 +177,6 @@ const PopupForm = () => {
                     />
                   </div>
 
-                  {/* PHONE */}
                   <div className="popup-field">
                     <FaPhone />
 
@@ -200,7 +193,6 @@ const PopupForm = () => {
                     />
                   </div>
 
-                  {/* SERVICE */}
                   <div className="popup-field">
                     <FaClipboardList />
 
@@ -232,7 +224,6 @@ const PopupForm = () => {
                     </select>
                   </div>
 
-                  {/* MESSAGE */}
                   <textarea
                     name="message"
                     placeholder="Tell us where you are and where you want to be... *"
@@ -243,7 +234,6 @@ const PopupForm = () => {
                   />
                 </div>
 
-                {/* SUBMIT BUTTON */}
                 <button
                   type="submit"
                   className="popup-submit-btn"

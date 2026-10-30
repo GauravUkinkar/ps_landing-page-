@@ -1,0 +1,256 @@
+
+.thank-you-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(0, 113, 255, 0.16),
+      transparent 55%
+    ),
+    linear-gradient(
+      115deg,
+      #031329 0%,
+      #041b39 48%,
+      #03142b 100%
+    );
+
+  color: #ffffff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+      linear-gradient(
+        rgba(65, 149, 255, 0.045) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(65, 149, 255, 0.045) 1px,
+        transparent 1px
+      );
+
+    background-size: 45px 45px;
+  }
+
+  .thank-you-glow {
+    position: absolute;
+    z-index: -1;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+    filter: blur(100px);
+
+    pointer-events: none;
+  }
+
+  .thank-you-glow-one {
+    top: 5%;
+    left: 5%;
+    background: rgba(0, 122, 255, 0.18);
+  }
+
+  .thank-you-glow-two {
+    right: 5%;
+    bottom: 0;
+    background: rgba(19, 183, 255, 0.12);
+  }
+
+  .thank-you-card {
+    width: 100%;
+    max-width: 1000px;
+    padding: 55px 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    border: 1px solid rgba(128, 185, 255, 0.22);
+    border-radius: 22px;
+
+    background: linear-gradient(
+      145deg,
+      rgba(12, 39, 75, 0.94),
+      rgba(4, 23, 49, 0.97)
+    );
+
+    box-shadow:
+      0 25px 65px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .thank-you-icon {
+    width: 82px;
+    height: 82px;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(19, 183, 255, 0.3);
+    border-radius: 50%;
+
+    background: rgba(8, 102, 232, 0.14);
+    color: #13b7ff;
+
+    font-size: 43px;
+
+    box-shadow: 0 0 35px rgba(19, 183, 255, 0.1);
+  }
+
+  .thank-you-tag {
+    margin-bottom: 15px;
+
+    color: #13b7ff;
+
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  p {
+    max-width: 490px;
+    margin: 0;
+
+    color: #c2d0e2;
+
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .thank-you-divider {
+    width: 70px;
+    height: 3px;
+    margin: 28px 0 20px;
+
+    border-radius: 10px;
+    background: linear-gradient(
+      90deg,
+      #0866e8,
+      #13b7ff
+    );
+  }
+
+  .thank-you-note {
+    color: #91b9e6;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .thank-you-home-btn {
+    min-height: 48px;
+    margin-top: 30px;
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+      100deg,
+      #0866e8,
+      #078cff
+    );
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 20px rgba(8, 102, 232, 0.2);
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    .thank-you-arrow {
+      font-size: 12px;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 25px rgba(8, 102, 232, 0.3);
+
+      .thank-you-arrow {
+        transform: translateX(3px);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .thank-you-page {
+    min-height: 75vh;
+    padding: 45px 16px;
+
+    .thank-you-card {
+      padding: 38px 22px;
+      border-radius: 17px;
+    }
+
+    .thank-you-icon {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 22px;
+      font-size: 35px;
+    }
+
+    .thank-you-tag {
+      font-size: 10px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    .thank-you-home-btn {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thank-you-page .thank-you-home-btn,
+  .thank-you-page .thank-you-home-btn .thank-you-arrow {
+    transition: none;
+  }
+}

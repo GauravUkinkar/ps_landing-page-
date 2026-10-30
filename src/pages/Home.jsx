@@ -7,6 +7,7 @@ import Testimonial from '../componant/testimonial/Testimonial'
 import Hook from '../componant/Hook/Hook'
 import Casestudy from '../componant/CaseStudy/Casestudy'
 import Contact from '../componant/contact/Contact'
+import FAQ from '../componant/FAQ/FAQ'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Contact />
       {/* <Process /> */}
       <Testimonial />
+      <FAQ />
       
     </>
   )
